@@ -1,0 +1,21 @@
+import pandas as pd
+
+
+def clean_dataframe(df):
+
+    # Remove completely empty rows
+    df = df.dropna(how="all")
+
+    # Remove duplicate rows
+    df = df.drop_duplicates()
+
+    # Clean column names
+    df.columns = (
+        df.columns
+        .astype(str)
+        .str.strip()
+        .str.lower()
+        .str.replace(" ", "_")
+    )
+
+    return df

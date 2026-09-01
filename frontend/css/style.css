@@ -1,0 +1,746 @@
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.dashboard-header {
+    background: #111827;
+
+    color: white;
+
+    padding: 32px 7%;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-header h1 {
+    font-size: 32px;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.5px;
+}
+
+.dashboard-header p {
+    color: #cbd5e1;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    width: 86%;
+
+    max-width: 1200px;
+
+    margin: 35px auto;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.stats-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.05);
+
+    transition: 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+.stat-icon {
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.stat-content h3 {
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.stat-content p {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   UPLOAD SECTION
+========================================= */
+
+.upload-section {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+.section-header {
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 25px;
+
+    margin-bottom: 7px;
+}
+
+.section-header p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   UPLOAD BOX
+========================================= */
+
+.upload-box {
+    border: 2px dashed #cbd5e1;
+
+    border-radius: 15px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    transition: 0.25s ease;
+}
+
+.upload-box:hover {
+    border-color: #6366f1;
+
+    background: #f8faff;
+}
+
+.upload-icon {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.upload-box h3 {
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+.upload-box p {
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   FILE INPUT
+========================================= */
+
+input[type="file"] {
+    display: block;
+
+    margin: 0 auto 20px auto;
+
+    padding: 10px;
+
+    max-width: 100%;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px 25px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: #4338ca;
+
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-section {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.loading-spinner {
+    width: 35px;
+
+    height: 35px;
+
+    border: 4px solid #e5e7eb;
+
+    border-top: 4px solid #4f46e5;
+
+    border-radius: 50%;
+
+    margin: 0 auto 15px auto;
+
+    animation:
+        spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.loading-section h3 {
+    margin-bottom: 7px;
+}
+
+.loading-section p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   RESULT SECTION
+========================================= */
+
+.result-section {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8faff
+        );
+
+    border: 1px solid #dbe4ff;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(79, 70, 229, 0.08);
+}
+
+
+/* =========================================
+   RESULT HEADER
+========================================= */
+
+.result-header {
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f5f3ff
+        );
+
+    border: 1px solid #ddd6fe;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    margin-bottom: 25px;
+}
+
+.result-header h2 {
+    font-size: 25px;
+
+    margin-bottom: 7px;
+
+    color: #312e81;
+}
+
+.result-header p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   EMPTY RESULT
+========================================= */
+
+.empty-result {
+    text-align: center;
+
+    padding: 35px;
+
+    background: #f8fafc;
+
+    border-radius: 14px;
+}
+
+.empty-icon {
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+.empty-result h3 {
+    margin-bottom: 8px;
+}
+
+.empty-result p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   AI INSIGHT CARDS
+========================================= */
+
+.insight-card {
+    position: relative;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 20px 22px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.05);
+
+    transition: 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+/* Left Color Line */
+
+.insight-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 5px;
+
+    height: 100%;
+
+    background: #6366f1;
+}
+
+
+.insight-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.10);
+}
+
+
+.insight-card h4 {
+    font-size: 17px;
+
+    margin-bottom: 10px;
+
+    color: #111827;
+}
+
+
+.insight-card p {
+    color: #475569;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SUMMARY CARD
+========================================= */
+
+.insight-card[data-type="summary"] {
+    background: #eff6ff;
+}
+
+.insight-card[data-type="summary"]::before {
+    background: #2563eb;
+}
+
+
+/* =========================================
+   KEY POINTS CARD
+========================================= */
+
+.insight-card[data-type="key_points"] {
+    background: #f5f3ff;
+}
+
+.insight-card[data-type="key_points"]::before {
+    background: #7c3aed;
+}
+
+
+/* =========================================
+   STATISTICS CARD
+========================================= */
+
+.insight-card[data-type="statistics"] {
+    background: #fff7ed;
+}
+
+.insight-card[data-type="statistics"]::before {
+    background: #f97316;
+}
+
+
+/* =========================================
+   KEYWORDS CARD
+========================================= */
+
+.insight-card[data-type="keywords"] {
+    background: #ecfeff;
+}
+
+.insight-card[data-type="keywords"]::before {
+    background: #0891b2;
+}
+
+
+/* =========================================
+   KEY POINTS
+========================================= */
+
+.key-points {
+    padding-left: 25px;
+
+    margin-top: 10px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+
+    color: #334155;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+    padding-left: 5px;
+}
+
+.key-points li::marker {
+    color: #7c3aed;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   PREDICTION CARDS
+========================================= */
+
+.prediction-card {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    padding: 17px 20px;
+
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.04);
+
+    transition: 0.25s ease;
+}
+
+.prediction-card:hover {
+    transform: translateY(-2px);
+}
+
+.prediction-card strong {
+    font-size: 15px;
+}
+
+.prediction-card span {
+    background: #dcfce7;
+
+    color: #166534;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FILE INFO
+========================================= */
+
+.file-info {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 15px 18px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.file-info p {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+}
+
+.file-info p:last-child {
+    margin-bottom: 0;
+}
+
+.file-info strong {
+    color: #3730a3;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error {
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #991b1b;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    border-top: 1px solid #e5e7eb;
+
+    background: white;
+}
+
+footer p:first-child {
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .dashboard-header {
+        padding: 25px 4%;
+    }
+
+    .dashboard-header h1 {
+        font-size: 26px;
+    }
+
+    .upload-section,
+    .result-section {
+        padding: 25px;
+    }
+
+    .prediction-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+}
